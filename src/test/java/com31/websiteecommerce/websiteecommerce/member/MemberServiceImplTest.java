@@ -1,6 +1,6 @@
 package com31.websiteecommerce.websiteecommerce.member;
 
-import com31.websiteecommerce.websiteecommerce.member.model.Member;
+import com31.websiteecommerce.websiteecommerce.member.entity.Member;
 import com31.websiteecommerce.websiteecommerce.member.service.MemberServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
@@ -52,17 +52,17 @@ public class MemberServiceImplTest {
     public void updateTest(){
         Member memberA=new Member(Long.valueOf(1),"Stelli","stellitan98@gmail.com","123456");
         memberService.create(memberA);
-        Optional<Member> updateMember1= memberService.update(
+        Member updateMember1= memberService.update(
                 new Member(Long.valueOf(1),"Stella","stella@gmail.com","abc123")
         );
-        Optional<Member> updateMember2= memberService.update(
+        Member updateMember2= memberService.update(
                 new Member(Long.valueOf(12),"Stella","stella@gmail.com","abc123")
         );
-        Assert.assertTrue("Member name must change to stella",updateMember1.get().getName().equals("Stella"));
+        Assert.assertTrue("Member name must change to stella",memberA.getName().equals(updateMember1.getName()));
         Assert.assertTrue("Member email must change to stella@gmail.com",
-                           updateMember1.get().getEmail().equals("stella@gmail.com"));
-        Assert.assertTrue("Member password must change to abc123",updateMember1.get().getPassword().equals("abc123"));
-        Assert.assertTrue("Must have same id",updateMember1.get().getId() == 1);
+                           memberA.getEmail().equals(updateMember1.getEmail()));
+        Assert.assertTrue("Member password must change to abc123",memberA.getPassword().equals(updateMember1.getPassword()));
+        Assert.assertTrue("Must have same id",memberA.getId() == 1);
         Assert.assertTrue("Id must contain in array",updateMember2 == null);
     }
 

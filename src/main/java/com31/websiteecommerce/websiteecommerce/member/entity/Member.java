@@ -1,4 +1,4 @@
-package com31.websiteecommerce.websiteecommerce.member.model;
+package com31.websiteecommerce.websiteecommerce.member.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,15 +13,11 @@ import javax.persistence.*;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
     private String password;
 }

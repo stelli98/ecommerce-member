@@ -1,6 +1,6 @@
 package com31.websiteecommerce.websiteecommerce.member;
 
-import com31.websiteecommerce.websiteecommerce.member.model.Member;
+import com31.websiteecommerce.websiteecommerce.member.entity.Member;
 import com31.websiteecommerce.websiteecommerce.member.repository.MemberRepository;
 import org.junit.After;
 import org.junit.Assert;

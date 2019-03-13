@@ -1,6 +1,6 @@
 package com31.websiteecommerce.websiteecommerce.member.repository;
 
-import com31.websiteecommerce.websiteecommerce.member.model.Member;
+import com31.websiteecommerce.websiteecommerce.member.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
